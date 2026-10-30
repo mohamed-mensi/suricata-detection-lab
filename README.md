@@ -46,6 +46,24 @@ All rules are in [`custom.rules`](custom.rules).
 
 Signature-based detection is limited by encryption, evasion (fragmentation, encoding, header changes), false positives and threshold tuning. The report covers these for each rule and suggests complementing Suricata with anomaly detection, file extraction and SIEM correlation.
 
+## Evidence (screenshots)
+
+Each alert was checked in `/var/log/suricata/fast.log`. Screenshots are in [`screenshots/`](screenshots/):
+
+| Rule | Screenshots |
+|---|---|
+| 1000001 (ICMP echo reply) | `s34_ping.png`, `s35_alert_icmp.png` |
+| 1000002 (ICMP flood) | `s37_flood.png`, `s37_alert_flood.png` |
+| 1000003 (PDF transfer) | `s45_alert_pdf.png` |
+| 1000007 (PDF with JavaScript) | `s53_alert_js.png` |
+| 1000011 (EXE transfer) | `s56_alert_exe.png` |
+| 1000009 (Visa number over SMTP) | `s60_follow_stream.png`, `s63_alert_visa.png` |
+| 1000010 (phishing DNS query) | `s66_packet29.png`, `s72_alert_phishing.png` |
+
 ## Report
 
-The full write-up with screenshots is in [`report/`](report/).
+The full write-up is in [`report/`](report/).
+
+## Note on lab files
+
+The PCAP files used for testing (`with_pdf.pcap`, `email_cc2.pcap`, `phishingattack.pcap`) were provided with the course lab and are included here for reproducibility.
